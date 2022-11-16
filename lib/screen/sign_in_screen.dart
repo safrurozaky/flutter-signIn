@@ -41,6 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
                 Container(
+                  margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
                   width: 120,
                   height: 50,
                   color: Colors.black,
