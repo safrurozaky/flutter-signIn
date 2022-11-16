@@ -18,26 +18,35 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  "SIGN IN",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    prefixIcon: Icon(
-                      Icons.person_outline,
-                    ),
-                    hintText: "Username",
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  child: Text(
+                    "SIGN IN",
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    prefixIcon: Icon(
-                      Icons.lock_open,
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: UnderlineInputBorder(),
+                      prefixIcon: Icon(
+                        Icons.person_outline,
+                      ),
+                      hintText: "Username",
                     ),
-                    hintText: "Password",
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: UnderlineInputBorder(),
+                      prefixIcon: Icon(
+                        Icons.lock_open,
+                      ),
+                      hintText: "Password",
+                    ),
                   ),
                 ),
                 Container(
