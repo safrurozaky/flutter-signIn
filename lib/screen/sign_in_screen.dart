@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -13,6 +15,7 @@ class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController password = TextEditingController();
   String yourusername = '';
   String yourpassword = '';
+  bool _obsecureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +53,25 @@ class _SignInScreenState extends State<SignInScreen> {
                   margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: TextFormField(
                     controller: password,
-                    obscureText: true,
+                    obscureText: _obsecureText,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(),
                       prefixIcon: Icon(
                         Icons.lock_open,
+                      ),
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          if (_obsecureText == false)
+                            _obsecureText = true;
+                          else
+                            _obsecureText = false;
+                          //membuat triger ketika kita klik icon mata, hurufnya bisa terlihat atau sebaliknya
+                          setState(() {});
+                        },
+                        child: Icon((_obsecureText == false)
+                            ? Icons.remove_red_eye
+                            : Icons.visibility_off),
+                        //membuat kondisi ketika obsecurenya on, icon berubah seperti mata tercoret/visible
                       ),
                       hintText: "Password",
                     ),
